@@ -6,6 +6,8 @@ interface Props {
   className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
+  outlined?: boolean;
+  rounded?: boolean;
 }
 
 export function Button({
@@ -14,12 +16,27 @@ export function Button({
   className,
   disabled,
   onClick,
+  outlined,
+  rounded,
 }: Props) {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ${className}`}
+      className={`
+      w-full
+      px-5 py-2 
+      text-sm text-center 
+      ${
+        outlined
+          ? "text-pink-500 bg-transparent hover:bg-pink-500 hover:text-white border-2 border-pink-500 "
+          : "text-white bg-pink-500 hover:bg-pink-600 "
+      }
+      focus:ring-pink-300
+      focus:ring-4
+      font-medium
+      rounded-${rounded ? "full" : "lg"}
+      ${className}`}
       disabled={disabled}
     >
       {children}
