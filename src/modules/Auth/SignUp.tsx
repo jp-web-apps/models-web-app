@@ -21,19 +21,19 @@ export function SignUp() {
   const onSubmit = async ({ email, password }: Form) => {
     try {
       setLoading(true);
-        const supbaseData = await supabase.auth.signUp({ email, password });
-        console.log({supbaseData})
+      const supbaseData = await supabase.auth.signUp({ email, password });
+      console.log({ supbaseData });
       //   if (error) throw error;
       //   alert("Check your email for the login link!");
-      } catch (error) {
-        alert(error.error_description || error.message);
+    } catch (error) {
+      alert(error.error_description || error.message);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="bg-slate-800 w-full min-h-screen flex items-center justify-center">
+    <div className="bg-slate-900 w-full min-h-screen flex items-center justify-center">
       <div className="lg:w-6/12">
         <div className="bg-white shadow-md rounded-lg overflow-hidden flex">
           <div className="overflow-hidden w-8/12">
@@ -54,7 +54,7 @@ export function SignUp() {
             </div>
 
             <div className="mb-4">
-              <h3 className="text-sm font-semibold text-slate-600 mb-2">
+              <h3 className="text-sm font-semibold text-slate-600 mb-1">
                 Username
               </h3>
               <Input
@@ -65,14 +65,14 @@ export function SignUp() {
             </div>
 
             <div className="mb-4">
-              <h3 className="text-sm font-semibold text-slate-600 mb-2">
+              <h3 className="text-sm font-semibold text-slate-600 mb-1">
                 Email
               </h3>
               <Input type="text" placeholder="Email" {...register("email")} />
             </div>
 
             <div className="mb-8">
-              <h3 className="text-sm font-semibold text-slate-600 mb-2">
+              <h3 className="text-sm font-semibold text-slate-600 mb-1">
                 Password
               </h3>
               <Input
