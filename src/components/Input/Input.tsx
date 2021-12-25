@@ -17,7 +17,7 @@ interface Props {
 export const Input = forwardRef<HTMLInputElement, Props>(
   ({ onChange, onBlur, name, type, className = "", placeholder }, ref) => (
     <input
-      className={`appearance-none border border-gray-300 rounded text-sm w-full block py-2 px-3 text-gray-700 leading-tight focus:ring-blue-500 focus:border-blue-500 ${className}`}
+      className={`rounded-full h-[36px] leading-none w-full block px-5 text-sm text-gray-700 outline-none focus:outline-none focus:shadow hover:shadow appearance-none transition-all ${className}`}
       ref={ref}
       name={name}
       type={type}
